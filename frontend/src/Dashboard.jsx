@@ -130,7 +130,7 @@ useEffect(() => {
 
 useEffect(() => {
 
-  fetch("http://localhost:5000/api/auth/users")
+  fetch("https://task-manager-app-production-8089.up.railway.app/api/auth/users")
   .then((res) => res.json())
   .then((data) => setAllUsers(data))
   .catch((err) => console.log(err));

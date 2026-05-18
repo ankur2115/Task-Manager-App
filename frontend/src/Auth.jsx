@@ -33,7 +33,7 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const API_URL = "http://localhost:5000/api/auth";
+    const API_URL = "https://task-manager-app-production-8089.up.railway.app/api/auth";
 
     try {
       if (activeTab === "Register") {
