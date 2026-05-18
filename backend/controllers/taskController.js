@@ -3,12 +3,22 @@ const Task = require('../models/Task');
 // 1. Naya Task Banana (Sirf Admin ke liye aage restrict karenge)
 exports.createTask = async (req, res) => {
     try {
-        const { title, description, assignedTo } = req.body;
+        const {
+  title,
+  description,
+  assignedTo,
+  taskType,
+  dueDate,
+  priority
+} = req.body;
         const task = new Task({
             title,
             description,
             assignedTo,
-            createdBy: req.user.id // Token se user ID nikalenge
+            taskType,
+            dueDate,
+            priority,
+            createdBy: req.user.id
         });
         await task.save();
         res.status(201).json(task);

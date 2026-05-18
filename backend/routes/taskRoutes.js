@@ -104,14 +104,20 @@ router.post(
       const {
         title,
         description,
+        taskType,
+        dueDate,
+        priority,
+        assignedTo,
       } = req.body;
 
       const newTask = new Task({
 
         title,
         description,
-
-        assignedTo: req.user.id,
+        taskType,
+        dueDate,
+        priority,
+        assignedTo,
 
         createdBy: req.user.id,
 
